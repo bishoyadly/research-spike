@@ -1,0 +1,27 @@
+https://www.baeldung.com/regular-expressions-java
+
+https://www.baeldung.com/java-regex-performance
+
+https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html
+
+https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Matcher.html
+
+https://www.freeformatter.com/java-regex-tester.html
+
+https://support.microsoft.com/en-us/office/manage-email-messages-by-using-rules-c24f5dea-9465-4df4-ad17-a50704d66c59
+
+-----------------------------------------------------------------------------------------------------------------
+
+Avaya Confluence :-
+
+https://confluence.forge.avaya.com/display/AOEC/Email+Keyword+Matching+Service
+
+-----------------------------------------------------------------------------------------------------------------
+
+http://randomtextgenerator.com/
+https://countwordsfree.com/
+https://www.outlook-apps.com/maximum-email-size/
+
+------------------------------------------------
+https://app.lucidchart.com/
+https://www.draw.io/

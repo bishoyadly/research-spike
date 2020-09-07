@@ -64,7 +64,7 @@ public class RulesEvaluationService {
         Integer matchingCounter = 0;
         while (matcher.find()) {
             matchingCounter++;
-            log.info(matcher.group());
+//            log.info(matcher.group());
         }
         return matchingCounter;
     }

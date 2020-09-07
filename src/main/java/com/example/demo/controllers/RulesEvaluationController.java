@@ -4,10 +4,11 @@ import com.example.demo.dtos.EmailMessageDto;
 import com.example.demo.dtos.SystemAttributeDto;
 import com.example.demo.services.RulesEvaluationService;
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
-import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.time.StopWatch;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -27,19 +28,26 @@ public class RulesEvaluationController {
         this.rulesEvaluationService = rulesEvaluationService;
     }
 
-    public String getEmailBodyFromFile() throws FileNotFoundException {
+    public String getEmailBodyFromFile() {
         String basePath = "D:/LinkDev Work Materials/Avaya Dev Project Materials/Research Spike Materials";
-        String filePath = basePath + "/src/main/resources/emails/Test_HTML.html";
-        Scanner scanner = new Scanner(new File(filePath));
-        String body = "";
-        while (scanner.hasNext()) {
-            body += " " + scanner.next();
+        String filePath = basePath + "/src/main/resources/emails/20MB_email.txt";
+//        Scanner scanner = new Scanner(new File(filePath));
+//        String body = "";
+//        while (scanner.hasNext()) {
+//            body += " " + scanner.next();
+//        }
+//        return body;
+        String emailText = null;
+        try {
+            emailText = FileUtils.readFileToString(new File(filePath), StandardCharsets.UTF_8);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        return body;
+        return emailText;
     }
 
     @PostMapping
-    public ResponseEntity<List<SystemAttributeDto>> rulesEvaluation(@RequestBody EmailMessageDto emailMessageDto) throws FileNotFoundException {
+    public ResponseEntity<List<SystemAttributeDto>> rulesEvaluation(@RequestBody EmailMessageDto emailMessageDto) {
         String txt = getEmailBodyFromFile();
         emailMessageDto.setSubject(txt);
         emailMessageDto.setBody(txt);

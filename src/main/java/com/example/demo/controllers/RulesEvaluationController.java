@@ -48,6 +48,7 @@ public class RulesEvaluationController {
 
     @PostMapping
     public ResponseEntity<List<SystemAttributeDto>> rulesEvaluation(@RequestBody EmailMessageDto emailMessageDto) {
+        //test commit
         String txt = getEmailBodyFromFile();
         emailMessageDto.setSubject(txt);
         emailMessageDto.setBody(txt);
